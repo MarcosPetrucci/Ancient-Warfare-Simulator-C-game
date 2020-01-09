@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1558401630 source:c:\users\marco\documents\marcos\usp\engenharia da computação\icc  i\projeto(esse)\projeto-icc\projeto-jogo\main.cpp
+	<stdio.h>
+	<string.h>
+	<SDL.h>
+
+1561585439 source:c:\users\marco\documents\marcos\usp\engenharia da computação\icc  i\projeto\projeto-icc\projeto-jogo\main.cpp
+	<stdio.h>
+	<string.h>
+	<SDL.h>
+	"SDL_opengl.h"
+	<time.h>
+	<SDL_image.h>
+	"string"
+	<SDL_mixer.h>
+
+1578519183 source:c:\users\marcosviníciusfirmin\documents\usp\engenharia da computação\introdução à ciência de computação\projeto-icc\projeto-icc\projeto-jogo\main.cpp
+	<stdio.h>
+	<string.h>
+	<SDL.h>
+	"SDL_opengl.h"
+	<time.h>
+	<SDL_image.h>
+	"string"
+	<SDL_mixer.h>
+
+1578520262 source:c:\users\marcosviníciusfirmin\documents\usp\engenharia da computação\introdução à ciência de computação\ancient-warfare-simulator\projeto-jogo\main.cpp
+	<stdio.h>
+	<string.h>
+	<SDL.h>
+	"SDL_opengl.h"
+	<time.h>
+	<SDL_image.h>
+	"string"
+	<SDL_mixer.h>
+
