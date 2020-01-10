@@ -23,7 +23,7 @@ void abrir_arq(const char *modo) //Abre o arquivo no modo especificado
 {
     //existem varios modos de abrir um arquivo, include o arquivo pode ser binario
     //modo a+ permite leitura e escrita
-	if((arq = fopen("Arquivo_SNUNS.bin", modo)) == NULL)
+	if((arq = fopen("Arquivo_AWS.bin", modo)) == NULL)
     {
         printf("\nErro na abertura do arquivo");
 	}
@@ -89,9 +89,6 @@ void salvaDados_Jogador(struct usuario alvo) //Salva no arquivo as inforamções d
 
 void alteraDados_Jogador(struct usuario alvo) //Atualiza as informações do Jogador
 {
-    //Esta é um pouco mais complicada. Vou ter que procurar no arquivo a linha cujo nome gravado é o mesmo do atual jogador
-    //Feito isso, devo *salvar o local* deste registro, o "numero da linha", para alterar tudo exatamente nesta linha.
-    //PS: Essa função já subentende que todas as devidas alterações no estagio e pontos já foram feitas
 
     struct usuario Jogador_aux;
     int encontrou = 0;
@@ -162,49 +159,49 @@ void exibe_personagem_pelo_id(struct usuario alvo){
     switch (ninja)
     {
         case 1 :
-        printf ("\nPersonagem: Naruto");
+        printf ("\nPersonagem: Lacaio");
         break;
 
         case 2 :
-        printf ("\nPersonagem: Sasuke");
+        printf ("\nPersonagem: Aldea");
         break;
 
         case 3 :
-        printf ("\nPersonagem: Sakura");
+        printf ("\nPersonagem: Cavaleiro");
         break;
 
         case 4 :
-        printf ("\nPersonagem: Pain");
+        printf ("\nPersonagem: Demonio");
         break;
 
         case 5 :
-        printf ("\nPersonagem: Gaara");
+        printf ("\nPersonagem: Mago");
         break;
 
         case 6 :
-        printf ("\nPersonagem: Jiraiya");
+        printf ("\nPersonagem: Orc");
         break;
 
         case 7 :
-        printf ("\nPersonagem: Kakashi");
+        printf ("\nPersonagem: Planta Viva");
         break;
-        
+
         case 8 :
-        printf ("\nPersonagem: Orochimaru");
+        printf ("\nPersonagem: Zumbi");
         break;
     }
 }
 
 void lista_id_personagens(){
 
-    printf("\n1-Naruto");
-    printf("\n2-Sasuke");
-    printf("\n3-Sakura");
-    printf("\n4-Pain");
-    printf("\n5-Gaara");
-    printf("\n6-Jiraiya");
-    printf("\n7-Kakashi");
-    printf("\n8-Orochimaru\n\n");
+    printf("\n1-Lacaio");
+    printf("\n2-Aldea");
+    printf("\n3-Cavaleiro");
+    printf("\n4-Demonio");
+    printf("\n5-Mago");
+    printf("\n6-Orc");
+    printf("\n7-Planta viva");
+    printf("\n8-Zumbi\n\n");
     printf("Escolha seu personagem (digite seu numero): ");
 
 }
@@ -227,17 +224,17 @@ void opcao_jogar(void){
 
     char nomeDigitado1[50];
     char nomeDigitado2[50];
-	printf("\t\t\t---------- SUPER NARUTO ULTIMATE NINJA FIGTHER SIMULATOR 19 ----------");
+	printf("\t\t\t---------- Ancient Warfare Simulator ----------");
     printf("\n############### Jogador 1 ################\n\n");
 
-    printf("Digite seu nome ninja: ");
+    printf("Digite o seu nome: ");
     fgets(nomeDigitado1, 50, stdin);
 
     if(carregaDados_Jogador(nomeDigitado1, &Jogador1) == 1){
 
         exibe_dados(Jogador1);
         salvaDados_Jogador1_Conexao(Jogador1);
-        printf("\nUm ninja experiente!!\n");
+        printf("\nUm jogador experiente!!\n");
         fclose(conexao);
 
     }
@@ -246,7 +243,7 @@ void opcao_jogar(void){
 
         strcpy(Jogador1.nome, nomeDigitado1);
 
-        printf("Um novo nija!\n");
+        printf("Um novo jogador!\n");
 
         lista_id_personagens();
         scanf("%d", &Jogador1.idPersonagem);
@@ -266,13 +263,13 @@ void opcao_jogar(void){
 
     printf("############### Jogador 2 ################\n\n");
 
-    printf("Digite seu nome ninja: ");
+    printf("Digite o seu nome: ");
     fgets(nomeDigitado2, 50, stdin);
 
     if(carregaDados_Jogador(nomeDigitado2, &Jogador2) == 1){
 
         exibe_dados(Jogador2);
-        printf("\nUm ninja experiente!!\n");
+        printf("\nUm jogador experiente!!\n");
         salvaDados_Jogador2_Conexao(Jogador2);
     }
 
@@ -280,7 +277,7 @@ void opcao_jogar(void){
 
         strcpy(Jogador2.nome, nomeDigitado2);
 
-        printf("Um novo nija!\n");
+        printf("Um novo jogador!\n");
 
         lista_id_personagens();
         scanf("%d", &Jogador2.idPersonagem);
@@ -292,7 +289,7 @@ void opcao_jogar(void){
         salvaDados_Jogador(Jogador2);
         salvaDados_Jogador2_Conexao(Jogador2);
     }
-	printf("Bom jogo %c voc%cs!! Basta executar o Super Naruto U. N. F. e jogar com seus personagens!!", 133,136 );
+	printf("Bom jogo %c voc%cs!! Basta executar o Ancient Warfare Simulator e jogar com seus personagens!!", 133,136 );
 
     fclose(arq);
     fclose(conexao);
@@ -339,7 +336,7 @@ void testa ()
     }
     else
     	printf("fedeu");
-    
+
 }
 int main()
 {

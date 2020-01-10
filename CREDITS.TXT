@@ -1,0 +1,63 @@
+﻿Declaro não possuir nenhum direito sobre todas as músicas e artes utilizadas. Todas estas foram criadas e disponibilizadas para uso por seus respectivos autores.
+Este jogo possui apenas carater educacional, não o comercializo de nenhuma maneira.
+
+Thanks to 0x72 for the characters images:      https://0x72.itch.io/dungeontileset-ii
+
+Thanks to edermunizz for the background image: https://edermunizz.itch.io/free-pixel-art-forest
+
+Thanks to shikashiassets for the icon image:   https://shikashiassets.itch.io/shikashis-fantasy-icons-pack
+
+Thanks for all the music composers:
+
+Title:
+    Soliloquy
+
+Author:
+    Matthew Pablo
+
+URL:
+    https://opengameart.org/content/soliloquy
+
+License(s):
+    * CC-BY 3.0 ( http://creativecommons.org/licenses/by/3.0/legalcode )
+
+File(s):
+    * Soliloquy.mp3
+
+-----------------------------------------
+
+Title:
+    Arabesque
+
+Author:
+    brainiac256
+
+URL:
+    https://opengameart.org/content/arabesque
+
+License(s):
+    * CC-BY 3.0 ( http://creativecommons.org/licenses/by/3.0/legalcode )
+    * GPL 3.0 ( http://www.gnu.org/licenses/gpl-3.0.html )
+
+File(s):
+    * Arabesque.mp3
+
+----------------------------------------
+
+Title:
+    The King's Crowning
+
+Author:
+    Telaron
+
+URL:
+    https://opengameart.org/content/the-kings-crowning
+
+License(s):
+    * GPL 2.0 ( http://www.gnu.org/licenses/old-licenses/gpl-2.0.html )
+    * GPL 3.0 ( http://www.gnu.org/licenses/gpl-3.0.html )
+    * CC-BY-SA 3.0 ( http://creativecommons.org/licenses/by-sa/3.0/legalcode )
+
+File(s):
+    * the_kings_crowning_v1.mp3
+

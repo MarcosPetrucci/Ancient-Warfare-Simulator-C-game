@@ -66,7 +66,7 @@ void abrir_arq(const char *modo) //Abre o arquivo no modo especificado
 {
     //existem varios modos de abrir um arquivo, include o arquivo pode ser binario
     //modo a+ permite leitura e escrita
-	if((arq = fopen("Arquivo_SNUNS.bin", modo)) == NULL)
+	if((arq = fopen("Arquivo_AWS.bin", modo)) == NULL)
     {
         printf("\nErro na abertura do arquivo");
 	}
