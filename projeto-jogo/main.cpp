@@ -536,8 +536,8 @@ int main(int argc, char* args[])
     menu = loadTexture("imagens//menu.png");
     fundo = loadTexture("imagens//fundo2.png");
     vitoria = loadTexture("imagens//vitoria.png");
-    kunai1 = loadTexture("imagens//kunai1.png");
-    kunai2 = loadTexture("imagens//kunai2.png");
+    kunai1 = loadTexture("imagens//arrow1.png");
+    kunai2 = loadTexture("imagens//arrow2.png");
     coracao = loadTexture("imagens//coracao.png");
     creditos1 = loadTexture("imagens//creditos1.png");
     creditos2 = loadTexture("imagens//creditos2.png");
