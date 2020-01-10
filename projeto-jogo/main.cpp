@@ -8,10 +8,10 @@
 #include<SDL_mixer.h>
 //!Essa constante define o valor da velocidade dos personagens e dos projéteis
 //!Caso necessário, altere esse valor para calibrar a velocidade
-#define VELOCIDADE 0.1 //recomendamos aumentar de 0.1 em 0.1 até encontrar o valor ideal
+#define VELOCIDADE 0.07 //recomendamos aumentar de 0.1 em 0.1 até encontrar o valor ideal
 
 //!Essa constante define as proporções da tela
-#define TAMANHO_TELA 1 //recomendamos aumentar para valores entre 1 e 2
+#define TAMANHO_TELA 1.5 //recomendamos aumentar para valores entre 1 e 2
 
 
 
@@ -199,7 +199,7 @@ void configurar()
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1); //3D - não sei se vamos usar
 
     //Definir nome para nossa janela
-    SDL_WM_SetCaption("Naruto Simulator!", NULL);
+    SDL_WM_SetCaption("Ancient Warfare Simulator!", NULL);
 
     //Tamanho da janela - (x,y, bits/pixel, tipo_janela)
     SDL_SetVideoMode(800*TAMANHO_TELA,600*TAMANHO_TELA, 32,SDL_OPENGL);
@@ -351,7 +351,7 @@ void movimento(struct movimento *J1, struct movimento *J2, float *J1X, float *J1
             if(!tiros1[i][2]) //Se a terceira coluna de uma das linhas de tiro estiver "Vaga" (for igual a zero)
             {
                 tiros1[i][0] =  *J1X + J1Comp; //O tiro começa na mesma posição do personagem
-                tiros1[i][1] =  *J1Y + (J1Alt)/2 -35;
+                tiros1[i][1] =  *J1Y + (J1Alt)/2;
                 tiros1[i][2] = 1.0; //indica que ha esse tiro
                 i = 100;
             }
@@ -366,7 +366,7 @@ void movimento(struct movimento *J1, struct movimento *J2, float *J1X, float *J1
             if(!tiros2[i][2])
             {
                 tiros2[i][0] = *J2X - J2Comp;
-                tiros2[i][1] = *J2Y + (J2Alt)/2 -35;
+                tiros2[i][1] = *J2Y + (J2Alt)/2;
                 tiros2[i][2] = 1.0; //indica que há esse tiro
                 i = 100;
             }
@@ -391,71 +391,55 @@ void carrega_imagem_player(unsigned int *player1, unsigned int *player2)
 
     switch (Jogador1.idPersonagem)
     {
-        case 1 : *player1 = loadTexture("imagens//naruto.png");
-        //printf ("\nPersonagem: Naruto");
+        case 1 : *player1 = loadTexture("imagens//lacaio.png");
         break;
 
-        case 2 : *player1 = loadTexture("imagens//sasuke.png");
-        //printf ("\nPersonagem: Sasuke");
+        case 2 : *player1 = loadTexture("imagens//aldea.png");
         break;
 
-        case 3 : *player1 = loadTexture("imagens//sakura.png");
-        //printf ("\nPersonagem: Sakura");
+        case 3 : *player1 = loadTexture("imagens//cavaleiro.png");
         break;
 
-        case 4 : *player1 = loadTexture("imagens//pain.png");
-        //printf ("\nPersonagem: Pain");
+        case 4 : *player1 = loadTexture("imagens//demonio.png");
         break;
 
-        case 5 : *player1 = loadTexture("imagens//gaara.png");
-        //printf ("\nPersonagem: Gaara");
+        case 5 : *player1 = loadTexture("imagens//mago.png");
         break;
 
-        case 6 : *player1 = loadTexture("imagens//jiraya.png");
-        //printf ("\nPersonagem: Jiraiya");
+        case 6 : *player1 = loadTexture("imagens//orc.png");
         break;
 
-        case 7 : *player1 = loadTexture("imagens//kakashi.png");
-        //printf ("\nPersonagem: Kakashi");
+        case 7 : *player1 = loadTexture("imagens//planta_viva.png");
         break;
 
-        case 8 : *player1 = loadTexture("imagens//orochimaru.png");
-        //printf ("\nPersonagem: Orochimaru");
+        case 8 : *player1 = loadTexture("imagens//zumbi.png");
         break;
     }
 
     switch (Jogador2.idPersonagem)
     {
-        case 1 : *player2 = loadTexture("imagens//naruto.png");
-        //printf ("\nPersonagem: Naruto");
+        case 1 : *player2 = loadTexture("imagens//lacaio.png");
         break;
 
-        case 2 : *player2 = loadTexture("imagens//sasuke.png");
-        //printf ("\nPersonagem: Sasuke");
+        case 2 : *player2 = loadTexture("imagens//aldea.png");
         break;
 
-        case 3 : *player2 = loadTexture("imagens//sakura.png");
-        //printf ("\nPersonagem: Sakura");
+        case 3 : *player2 = loadTexture("imagens//cavaleiro.png");
         break;
 
-        case 4 : *player2 = loadTexture("imagens//pain.png");
-        //printf ("\nPersonagem: Pain");
+        case 4 : *player2 = loadTexture("imagens//demonio.png");
         break;
 
-        case 5 : *player2 = loadTexture("imagens//gaara.png");
-        //printf ("\nPersonagem: Gaara");
+        case 5 : *player2 = loadTexture("imagens//mago.png");
         break;
 
-        case 6 : *player2 = loadTexture("imagens//jiraya.png");
-        //printf ("\nPersonagem: Jiraiya");
+        case 6 : *player2 = loadTexture("imagens//orc.png");
         break;
 
-        case 7 : *player2 = loadTexture("imagens//kakashi.png");
-        //printf ("\nPersonagem: Kakashi");
+        case 7 : *player2 = loadTexture("imagens//planta_viva.png");
         break;
 
-        case 8 : *player2 = loadTexture("imagens//orochimaru.png");
-        //printf ("\nPersonagem: Orochimaru");
+        case 8 : *player2 = loadTexture("imagens//zumbi.png");
         break;
     }
 
@@ -483,21 +467,19 @@ int main(int argc, char* args[])
     arquivo = false;
     configurar();
 
-    Mix_Chunk *som;
     Mix_Chunk *dano;
+    Mix_Music *musica;
     Mix_Music *musica1;
     Mix_Music *musica2;
-    som = Mix_LoadWAV("sons//alarme.wav");
     dano = Mix_LoadWAV("sons//dano.wav");
-    musica1 = Mix_LoadMUS("sons//batalha.mp3");
-    musica2 = Mix_LoadMUS("sons//vitoria.mp3");
+    musica = Mix_LoadMUS("sons//Soliloquy.mp3");
+    musica1 = Mix_LoadMUS("sons//Arabesque.mp3");
+    musica2 = Mix_LoadMUS("sons//the_kings_crowning_v1.mp3");
 
     Mix_VolumeMusic(MIX_MAX_VOLUME/3);
     Mix_VolumeChunk(dano, MIX_MAX_VOLUME*2);
 
     time_t inicio, tempo;
-
-
 
     //!------------ LOGICA AQUI EM BAIXO ---------------------
     bool executando = true;
@@ -545,7 +527,8 @@ int main(int argc, char* args[])
     unsigned int kunai1 = 0,kunai2 = 0;
     unsigned int coracao = 0;
     unsigned int vitoria = 0;
-    unsigned int creditos_img = 0;
+    unsigned int creditos1 = 0;
+    unsigned int creditos2 = 0;
     unsigned int instrucoes_img = 0;
 
     ///Função deve detectar a imagem corretamente, dado os ids dos personagens
@@ -556,15 +539,17 @@ int main(int argc, char* args[])
     kunai1 = loadTexture("imagens//kunai1.png");
     kunai2 = loadTexture("imagens//kunai2.png");
     coracao = loadTexture("imagens//coracao.png");
-    creditos_img = loadTexture("imagens//creditos.png");
+    creditos1 = loadTexture("imagens//creditos1.png");
+    creditos2 = loadTexture("imagens//creditos2.png");
     instrucoes_img = loadTexture("imagens//instrucoes.png");
 
 
+    Mix_VolumeMusic(MIX_MAX_VOLUME/2);
+    Mix_PlayMusic(musica, -1); //Inicia a música do menu
 
     //loop do jogo
     while(executando)
     {
-
         //eventos
         while(SDL_PollEvent(&eventos))
         {
@@ -622,6 +607,7 @@ int main(int argc, char* args[])
                 { //Botao jogar
                     if(!creditos && !comecou_jogo && !instrucoes) //Garante que está  no menu, ou seja, nenhuma das  outras telas está ativa
                     {
+                        Mix_HaltMusic();
                         Mix_PlayMusic(musica1, -1);
                         t_coracao = time(NULL); //Inicia o contador dos coraçãoes corretamente, após o início do jogo
                         comecou_jogo = true;
@@ -629,18 +615,18 @@ int main(int argc, char* args[])
                     //Mix_HaltMusic(); para parar
                 }
                 if(eventos.key.keysym.sym == SDLK_2)
-                { //Botao creditos
-                    if(!creditos && !comecou_jogo && !instrucoes) //Garante que está  no menu, ou seja, nenhuma das  outras telas está ativa
-                    {
-                        creditos = true;
-                        inicio = time(NULL);
-                    }
-                }
-                if(eventos.key.keysym.sym == SDLK_3)
                 { //Botao instrucoes
                     if(!creditos && !comecou_jogo && !instrucoes) //Garante que está  no menu, ou seja, nenhuma das  outras telas está ativa
                     {
                         instrucoes = true;
+                        inicio = time(NULL);
+                    }
+                }
+                if(eventos.key.keysym.sym == SDLK_3)
+                { //Botao creditos
+                    if(!creditos && !comecou_jogo && !instrucoes) //Garante que está  no menu, ou seja, nenhuma das  outras telas está ativa
+                    {
+                        creditos = true;
                         inicio = time(NULL);
                     }
                 }
@@ -710,20 +696,41 @@ int main(int argc, char* args[])
 
                 if((double) tempo - inicio < 15)
                 {
-                    glEnable(GL_TEXTURE_2D);
-                    glBindTexture(GL_TEXTURE_2D, creditos_img); //!SETA A IMAGEM
+                    //Primeiro créditos aos artistas
+                    if((double) tempo - inicio < 7.5)
+                    {
+                        glEnable(GL_TEXTURE_2D);
+                        glBindTexture(GL_TEXTURE_2D, creditos1); //!SETA A IMAGEM
 
-                    //inicia desenho
-                    glBegin(GL_QUADS);
+                        //inicia desenho
+                        glBegin(GL_QUADS);
 
-                    glColor4ub(255,255,255,255);
-                    glTexCoord2d(0,0);   glVertex2f(0, 0);//primeiro ponto
-                    glTexCoord2d(1,0);   glVertex2f(800, 0); // segundo ponto
-                    glTexCoord2d(1,1);   glVertex2f(800, 600);
-                    glTexCoord2d(0,1);   glVertex2f(0, 600);
+                        glColor4ub(255,255,255,255);
+                        glTexCoord2d(0,0);   glVertex2f(0, 0);//primeiro ponto
+                        glTexCoord2d(1,0);   glVertex2f(800, 0); // segundo ponto
+                        glTexCoord2d(1,1);   glVertex2f(800, 600);
+                        glTexCoord2d(0,1);   glVertex2f(0, 600);
 
-                    glEnd();
-                    glDisable(GL_TEXTURE_2D);
+                        glEnd();
+                        glDisable(GL_TEXTURE_2D);
+                    }
+                    else
+                    {
+                        glEnable(GL_TEXTURE_2D);
+                        glBindTexture(GL_TEXTURE_2D, creditos2); //!SETA A IMAGEM
+
+                        //inicia desenho
+                        glBegin(GL_QUADS);
+
+                        glColor4ub(255,255,255,255);
+                        glTexCoord2d(0,0);   glVertex2f(0, 0);//primeiro ponto
+                        glTexCoord2d(1,0);   glVertex2f(800, 0); // segundo ponto
+                        glTexCoord2d(1,1);   glVertex2f(800, 600);
+                        glTexCoord2d(0,1);   glVertex2f(0, 600);
+
+                        glEnd();
+                        glDisable(GL_TEXTURE_2D);
+                    }
                 }
                 else
                     creditos = false;
@@ -968,7 +975,6 @@ int main(int argc, char* args[])
                     Mix_VolumeMusic(MIX_MAX_VOLUME/2);
                     Mix_PlayMusic(musica2, -1);
                     musica_toca = 0;
-
                 }
 
                 if((double) (tempo - inicio) < 15) //A tela deve ficar 15s a mostra
@@ -1002,7 +1008,7 @@ int main(int argc, char* args[])
                     //Desenhando jogador1
                     J1Comp = 300;
                     J1Alt = 380;
-                    J1X = 10;
+                    J1X = 250;
                     J1Y = 150;
                     glColor4ub(255,255,255,255);
                     glTexCoord2d(0,0); glVertex2f(J1X, J1Y); //primeiro ponto
@@ -1035,7 +1041,6 @@ int main(int argc, char* args[])
 
     free(tiros1);
     free(tiros2);
-    Mix_FreeChunk(som);
     Mix_FreeChunk(dano);
     Mix_FreeMusic(musica1);
     Mix_FreeMusic(musica2);
