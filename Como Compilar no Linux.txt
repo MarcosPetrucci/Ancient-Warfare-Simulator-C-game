@@ -1,0 +1,7 @@
+- Rodar os seguintes comandos
+
+sudo apt-get install libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev //Instalação do SDL
+
+g++ -o jogo main_linux.cpp -lSDLmain -lSDL -lGL -lSDL_image -lSDL_mixer 		     //Compilação do projeto
+
+./jogo
