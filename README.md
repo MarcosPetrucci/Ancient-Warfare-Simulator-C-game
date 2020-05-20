@@ -15,3 +15,6 @@ Thanks to edermunizz for the background image: https://edermunizz.itch.io/free-p
 Thanks to shikashiassets for the icon image:   https://shikashiassets.itch.io/shikashis-fantasy-icons-pack
 
 Thanks for all the music composers: Proper credits in CREDITS.txt
+
+<h2> Sobre o Jogo </h2>
+<strike> pendente por enquanto, pretendo incluir</strike>
